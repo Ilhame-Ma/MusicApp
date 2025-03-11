@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MusicApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MusicApp.Pages"
+    Title="MusicApp"
+    Shell.FlyoutBehavior="Flyout">
+
+    <FlyoutItem Title="Inicio" >
+        <ShellContent
+            Title="Inicio"
+            ContentTemplate="{DataTemplate pages:InicioPage}"
+            Route="inicioPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Música">
+        <Tab Title="Canciones">
+            <ShellContent
+                Title="Songs"
+                ContentTemplate="{DataTemplate pages:SongsPage}"
+                Route="songsPage" />
+        </Tab>
+
+        <Tab Title="Álbumes">
+            <ShellContent
+                Title="Álbumes"
+                ContentTemplate="{DataTemplate pages:AlbumsPage}"
+                Route="albumsPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Artistas" >
+        <ShellContent
+            Title="Artistas"
+            ContentTemplate="{DataTemplate pages:ArtistsPage}"
+            Route="artistsPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Reproductor">
+        <ShellContent
+            Title="Reproductor"
+            ContentTemplate="{DataTemplate pages:PlayPage}"
+            Route="playPage"
+            IsVisible="False"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configuración">
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate pages:SettingsPage}"
+            Route="settingsPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Sobre Nosotros">
+        <ShellContent
+        Title="About"
+        ContentTemplate="{DataTemplate pages:AboutPage}"
+        Route="aboutPage" />
+    </FlyoutItem>
+
+    <ShellContent
+        Title="Album Detail"
+        ContentTemplate="{DataTemplate pages:AlbumDetailPage}"
+        Route="albumDetail"
+        IsVisible="False" />
+
+    <ShellContent
+        Title="Artist Detail"
+        ContentTemplate="{DataTemplate pages:ArtistDetailPage}"
+        Route="artistDetail"
+        IsVisible="False" />
+
+</Shell>

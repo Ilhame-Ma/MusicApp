@@ -1,0 +1,56 @@
+<ContentPage
+    x:Class="MusicApp.Pages.InicioPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Inicio"
+    Background="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Canciones Populares"
+                TextColor="White" />
+
+            <ScrollView Orientation="Horizontal">
+                <HorizontalStackLayout
+                    Padding="10"
+                    BindableLayout.ItemTemplate="{StaticResource SongTemplate}"
+                    BindableLayout.ItemsSource="{Binding Songs}"
+                    Spacing="10" />
+            </ScrollView>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Álbumes Destacados"
+                TextColor="White" />
+
+            <ScrollView Orientation="Horizontal">
+                <HorizontalStackLayout
+                    Padding="10"
+                    BindableLayout.ItemTemplate="{StaticResource AlbumTemplate}"
+                    BindableLayout.ItemsSource="{Binding Albums}"
+                    Spacing="10" />
+            </ScrollView>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Artistas Destacados"
+                TextColor="White" />
+
+            <ScrollView Orientation="Horizontal">
+                <HorizontalStackLayout
+                    Padding="10"
+                    BindableLayout.ItemTemplate="{StaticResource ArtistTemplate}"
+                    BindableLayout.ItemsSource="{Binding Artists}"
+                    Spacing="10" 
+                    />
+            </ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

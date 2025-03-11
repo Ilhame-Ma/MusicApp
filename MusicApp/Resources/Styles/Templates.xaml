@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="MusicApp.Resources.Styles.Templates"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MusicApp.PageModels">
+    <DataTemplate x:Key="SongTemplate">
+        <Border
+            Margin="5"
+            Padding="15"
+            Background="#111E1E"
+            StrokeThickness="0"
+            WidthRequest="280">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <HorizontalStackLayout Spacing="10">
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="90"
+                    Source="{Binding Album.Picture}"
+                    WidthRequest="120" />
+                <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        LineBreakMode="TailTruncation"
+                        Text="{Binding Title}"
+                        TextColor="White" />
+                    <Label
+                        FontSize="14"
+                        LineBreakMode="TailTruncation"
+                        Text="{Binding Genre.Name}"
+                        TextColor="Gray" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AlbumTemplate">
+        <Border
+            Margin="5"
+            Padding="10"
+            Background="#111E1E"
+            StrokeThickness="0"
+            WidthRequest="150">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="100"
+                    Source="{Binding Picture}"
+                    WidthRequest="100" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Title}"
+                    TextColor="White" />
+                <Label
+                    FontSize="14"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="TailTruncation"
+                    Text="{Binding Year}"
+                    TextColor="Gray" />
+            </VerticalStackLayout>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ArtistTemplate">
+        <Border
+            Margin="5"
+            Padding="10"
+            Background="#111E1E"
+            StrokeThickness="0">
+            
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30" />
+            </Border.StrokeShape>
+
+
+
+
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                Spacing="5"
+                WidthRequest="150">
+
+                <Border
+                    BackgroundColor="Transparent"
+                    HeightRequest="100"
+                    StrokeThickness="0"
+                    WidthRequest="100">
+                    <Border.StrokeShape>
+                        <Ellipse />
+                    </Border.StrokeShape>
+                    <Image
+                        Aspect="AspectFill"
+                        HeightRequest="100"
+                        Source="{Binding Artist_thumbnail}"
+                        WidthRequest="100">
+                        <Image.Clip>
+                            <EllipseGeometry
+                                Center="50,50"
+                                RadiusX="50"
+                                RadiusY="50" />
+                        </Image.Clip>
+                    </Image>
+                </Border>
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="14"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="TailTruncation"
+                    Text="{Binding Name}"
+                    TextColor="White" />
+            </VerticalStackLayout>
+        </Border>
+    </DataTemplate>
+
+
+</ResourceDictionary>

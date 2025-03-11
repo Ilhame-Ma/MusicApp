@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MusicApp.Pages.ArtistDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Artist.Name}"
+    Background="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="150"
+                Source="{Binding Artist.Artist_thumbnail}"
+                WidthRequest="150">
+                <Image.Clip>
+                    <EllipseGeometry
+                        Center="75,75"
+                        RadiusX="75"
+                        RadiusY="75" />
+                </Image.Clip>
+            </Image>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="{Binding Artist.Name}"
+                TextColor="White" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Álbumes"
+                TextColor="White" />
+
+            <CollectionView ItemsSource="{Binding Albums}" SelectionChanged="OnAlbumSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            Padding="10"
+                            Stroke="Grey"
+                            StrokeShape="RoundRectangle 10"
+                            StrokeThickness="2">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="50"
+                                    Source="{Binding Picture}"
+                                    WidthRequest="50" />
+                                <VerticalStackLayout HorizontalOptions="Center">
+                                    <Label
+                                        FontSize="16"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding Title}"
+                                        VerticalOptions="Center" />
+
+                                    <Label
+                                        FontSize="16"
+                                        Text="{Binding Year}"
+                                        TextColor="White"
+                                        VerticalOptions="End" />
+                                </VerticalStackLayout>
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

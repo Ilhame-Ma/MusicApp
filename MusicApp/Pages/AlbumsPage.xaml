@@ -1,0 +1,45 @@
+<ContentPage
+    x:Class="MusicApp.Pages.AlbumsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Albumes">
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <CollectionView
+                Margin="10"
+                ItemsLayout="VerticalGrid, 2"
+                ItemsSource="{Binding Albums}"
+                SelectionChanged="OnAlbumSelected"
+                SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            Margin="5"
+                            Padding="10"
+                            BackgroundColor="Black"
+                            Stroke="White"
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="2">
+                            <StackLayout Orientation="Horizontal">
+                                <Image
+                                    HeightRequest="100"
+                                    Source="{Binding Picture}"
+                                    WidthRequest="100" />
+                                <StackLayout Padding="10" VerticalOptions="Center">
+                                    <Label
+                                        FontSize="18"
+                                        Text="{Binding Title}"
+                                        TextColor="White" />
+                                    <Label
+                                        FontSize="14"
+                                        Text="{Binding Year}"
+                                        TextColor="Gray" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
